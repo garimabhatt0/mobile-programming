@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>jQuery Student Profile</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="name.css">
+</head>
+<body>
+
+<div style="max-width:1000px;margin:0 auto 20px;">
+  <h1>jQuery Student Profile</h1>
+  <p class="subtitle">Interactive DOM Manipulation Demo</p>
+</div>
+
+<div class="layout">
+
+  <!-- LEFT: Profile Card -->
+  <div id="profile-card">
+    <div><img id="profile-photo" src="my pic.jpeg"></div>
+    <div id="student-name">Garima Bhatt</div>
+    <div id="student-bio">
+      Passionate about <strong>web development</strong> and open-source.<br/>
+      Currently learning jQuery, CSS animations, and REST APIs.
+    </div>
+    <div class="nickname-row">
+      <input id="nickname-input" type="text" placeholder="Enter nickname…"/>
+    </div>
+    <div id="skills-list">
+      <span>HTML</span><span>CSS</span><span>jQuery</span>
+      <span>JavaScript</span><span>Git</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: Controls -->
+  <div class="right-panel">
+
+    <!-- GET & SET -->
+    <div class="section-card">
+      <div class="section-header">1 — Get &amp; Set</div>
+      <div class="btn-grid">
+        <button id="btn-show-name">Show Name</button>
+        <button id="btn-change-name" class="accent">Change Name</button>
+        <button id="btn-show-bio">Show Bio</button>
+        <button id="btn-get-input">Get Input</button>
+        <button id="btn-set-input" class="teal">Set Input</button>
+      </div>
+    </div>
+
+    <!-- CSS CLASSES -->
+    <div class="section-card">
+      <div class="section-header">2 — CSS Classes</div>
+      <div class="btn-grid">
+        <button id="btn-highlight" class="gold">Highlight Card</button>
+        <button id="btn-remove-highlight">Remove Highlight</button>
+        <button id="btn-dark-mode">Toggle Dark Mode</button>
+        <button id="btn-rounded">Toggle Rounded</button>
+      </div>
+    </div>
+
+    <!-- CSS METHOD -->
+    <div class="section-card">
+      <div class="section-header">3 — CSS Method</div>
+      <div class="btn-grid">
+        <button id="btn-red-bg" class="accent">Red Background</button>
+        <button id="btn-reset-bg">Reset Background</button>
+      </div>
+    </div>
+
+    <!-- HIDE & SHOW -->
+    <div class="section-card">
+      <div class="section-header">4 — Hide &amp; Show</div>
+      <div class="btn-grid">
+        <button id="btn-hide-photo">Hide Photo</button>
+        <button id="btn-show-photo" class="teal">Show Photo</button>
+        <button id="btn-toggle-bio">Toggle Bio</button>
+      </div>
+    </div>
+
+    <!-- FADE -->
+    <div class="section-card">
+      <div class="section-header">5 — Fade</div>
+      <div class="btn-grid">
+        <button id="btn-fade-out">Fade Out Card</button>
+        <button id="btn-fade-in" class="teal">Fade In Card</button>
+        <button id="btn-fade-half" class="gold">Fade to 50%</button>
+      </div>
+    </div>
+
+    <!-- SLIDE -->
+    <div class="section-card">
+      <div class="section-header">6 — Slide</div>
+      <div class="btn-grid">
+        <button id="btn-slide-up">Slide Up Skills</button>
+        <button id="btn-slide-down" class="teal">Slide Down Skills</button>
+        <button id="btn-slide-toggle">Slide Toggle Skills</button>
+      </div>
+    </div>
+
+    <!-- ANIMATE -->
+    <div class="section-card">
+      <div class="section-header">7 — Animate</div>
+      <div class="btn-grid">
+        <button id="btn-animate" class="accent">Animate Card</button>
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="section-card">
+      <div class="section-header">8 — Events (hover photo / type in input)</div>
+      <div class="btn-grid" style="padding-bottom:4px;">
+        <span style="font-size:0.7rem;opacity:0.6;">Hover over the photo ↖ &nbsp;|&nbsp; Type in the nickname field ↖</span>
+      </div>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="section-card" id="output-box">
+      <div class="section-header">Output</div>
+      <div id="output">Ready.</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="name.js"></script>
+
+</body>
+</html>

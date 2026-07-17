@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Simple Bank System</title>
+
+  <link rel="stylesheet" href="icon.css" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Simple Bank System</h1>
+
+    <div class="balance-box">
+
+      <div class="balance-header">
+        <p>Current Balance</p>
+
+        <i class="fa-solid fa-eye-slash" id="toggleEye"></i>
+      </div>
+
+      <h2 id="balance">******</h2>
+
+    </div>
+
+    <div class="button-group">
+
+      <button class="withdraw" id="withdrawBtn">
+        Withdraw
+      </button>
+
+      <button class="deposit" id="depositBtn">
+        Deposit
+      </button>
+
+    </div>
+
+    <!-- Hidden Amount Section -->
+    <div id="amountSection">
+
+      <input
+        type="number"
+        id="amount"
+        placeholder="Enter amount"
+      />
+
+      <button id="confirmBtn">
+        Confirm
+      </button>
+
+    </div>
+
+    <div id="message"></div>
+
+    <p class="info">
+      Only multiples of 100 allowed
+    </p>
+
+  </div>
+
+  <script src="icon.js"></script>
+
+</body>
+</html>

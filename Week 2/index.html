@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Calculator</title>
+
+    <!-- CSS Part -->
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HTML Part -->
+    <h2>Enter 8 Subject Marks</h2>
+
+    <input type="number" id="english" placeholder="English"><br>
+    <input type="number" id="math" placeholder="Math"><br>
+    <input type="number" id="science" placeholder="Science"><br>
+    <input type="number" id="social" placeholder="Social"><br>
+    <input type="number" id="computer" placeholder="Computer"><br>
+    <input type="number" id="nepali" placeholder="Nepali"><br>
+    <input type="number" id="account" placeholder="Account"><br>
+    <input type="number" id="economics" placeholder="Economics"><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <!-- JavaScript Part -->
+    <script>
+        function calculate() {
+
+            // get values
+            var english = Number(document.getElementById('english').value);
+            var math = Number(document.getElementById('math').value);
+            var science = Number(document.getElementById('science').value);
+            var social = Number(document.getElementById('social').value);
+            var computer = Number(document.getElementById('computer').value);
+            var nepali = Number(document.getElementById('nepali').value);
+            var account = Number(document.getElementById('account').value);
+            var economics = Number(document.getElementById('economics').value);
+
+            // total
+            var total = english + math + science + social + computer + nepali + account + economics;
+
+            var division = "";
+            var color = "black";
+
+            // condition
+            if (total > 700) {
+                division = "Distinction";
+                color = "green";
+            } 
+            else if (total > 600) {
+                division = "First Division";
+            } 
+            else if (total > 500) {
+                division = "Second Division";
+            } 
+            else if (total > 400) {
+                division = "Third Division";
+            } 
+            else {
+                division = "Fail";
+                color = "red";
+            }
+
+            // display result
+            var result = document.getElementById("result");
+            result.innerHTML = "Total Marks = " + total + "<br>" + division;
+            result.style.color = color;
+        }
+    </script>
+
+</body>
+</html>

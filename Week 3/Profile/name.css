@@ -1,0 +1,258 @@
+ *::before,
+ *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ :root {
+     --ink: #1a1a2e;
+     --paper: #f5f0e8;
+     --accent: #e63946;
+     --gold: #f4a261;
+     --teal: #2a9d8f;
+     --border: 2px solid var(--ink);
+     --shadow: 4px 4px 0px var(--ink);
+     --radius: 0px;
+ }
+
+ body {
+     font-family: 'Space Mono', monospace;
+     background: var(--paper);
+     color: var(--ink);
+     min-height: 100vh;
+     padding: 24px;
+     background-image:
+         repeating-linear-gradient(0deg, transparent, transparent 31px, #d4c9b0 31px, #d4c9b0 32px),
+         repeating-linear-gradient(90deg, transparent, transparent 31px, #d4c9b0 31px, #d4c9b0 32px);
+ }
+
+ h1 {
+     font-family: 'DM Serif Display', serif;
+     font-size: clamp(1.6rem, 4vw, 2.4rem);
+     letter-spacing: -0.5px;
+     margin-bottom: 6px;
+ }
+
+ .subtitle {
+     font-size: 0.7rem;
+     letter-spacing: 3px;
+     text-transform: uppercase;
+     color: var(--accent);
+     margin-bottom: 24px;
+ }
+
+ .layout {
+     display: grid;
+     grid-template-columns: 300px 1fr;
+     gap: 20px;
+     max-width: 1000px;
+     margin: 0 auto;
+ }
+
+ /* ─── Profile Card ─── */
+ #profile-card {
+     background: white;
+     border: var(--border);
+     box-shadow: var(--shadow);
+     padding: 24px;
+     transition: background 0.3s, box-shadow 0.3s;
+ }
+
+ #profile-card.highlighted {
+     background: #fff9c4;
+     box-shadow: 6px 6px 0px var(--gold);
+ }
+
+ #profile-card.dark-mode {
+     background: var(--ink);
+     color: var(--paper);
+     border-color: var(--paper);
+     box-shadow: 4px 4px 0px var(--accent);
+ }
+
+ #profile-photo {
+     width: 100%;
+     aspect-ratio: 1;
+     object-fit: cover;
+     border: var(--border);
+     display: block;
+     background: linear-gradient(135deg, #2a9d8f 0%, #e63946 100%);
+     margin-bottom: 16px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ #profile-photo::after {
+     content: '👤';
+     font-size: 80px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ #profile-photo.rounded {
+     border-radius: 50%;
+ }
+
+ #profile-photo.shadow {
+     box-shadow: 0 0 0 4px var(--accent), 8px 8px 0 var(--ink);
+ }
+
+ #student-name {
+     font-family: 'DM Serif Display', serif;
+     font-size: 1.5rem;
+     margin-bottom: 8px;
+ }
+
+ #student-bio {
+     font-size: 0.75rem;
+     line-height: 1.6;
+     border-top: 1px dashed var(--ink);
+     padding-top: 10px;
+     margin-top: 10px;
+ }
+
+ #student-bio strong {
+     color: var(--accent);
+ }
+
+ .nickname-row {
+     display: flex;
+     gap: 8px;
+     margin-top: 14px;
+ }
+
+ #nickname-input {
+     flex: 1;
+     border: var(--border);
+     padding: 8px 10px;
+     font-family: 'Space Mono', monospace;
+     font-size: 0.8rem;
+     background: var(--paper);
+     outline: none;
+ }
+
+ #nickname-input:focus {
+     box-shadow: 2px 2px 0 var(--teal);
+ }
+
+ #skills-list {
+     margin-top: 14px;
+     border-top: 1px dashed var(--ink);
+     padding-top: 10px;
+ }
+
+ #skills-list span {
+     display: inline-block;
+     background: var(--ink);
+     color: var(--paper);
+     font-size: 0.65rem;
+     letter-spacing: 1px;
+     padding: 3px 8px;
+     margin: 3px 2px;
+ }
+
+ /* ─── Right Panel ─── */
+ .right-panel {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+ }
+
+ .section-card {
+     background: white;
+     border: var(--border);
+     box-shadow: var(--shadow);
+     overflow: hidden;
+ }
+
+ .section-header {
+     background: var(--ink);
+     color: var(--paper);
+     font-size: 0.65rem;
+     letter-spacing: 3px;
+     text-transform: uppercase;
+     padding: 8px 14px;
+ }
+
+ .btn-grid {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px;
+     padding: 14px;
+ }
+
+ button {
+     font-family: 'Space Mono', monospace;
+     font-size: 0.7rem;
+     padding: 7px 12px;
+     border: var(--border);
+     background: var(--paper);
+     color: var(--ink);
+     cursor: pointer;
+     box-shadow: 2px 2px 0 var(--ink);
+     transition: transform 0.08s, box-shadow 0.08s;
+     white-space: nowrap;
+ }
+
+ button:hover {
+     transform: translate(-1px, -1px);
+     box-shadow: 3px 3px 0 var(--ink);
+ }
+
+ button:active {
+     transform: translate(1px, 1px);
+     box-shadow: 1px 1px 0 var(--ink);
+ }
+
+ button.accent {
+     background: var(--accent);
+     color: white;
+     border-color: var(--ink);
+ }
+
+ button.teal {
+     background: var(--teal);
+     color: white;
+ }
+
+ button.gold {
+     background: var(--gold);
+     color: var(--ink);
+ }
+
+ /* ─── Output Box ─── */
+ #output-box {
+     background: white;
+     border: var(--border);
+     box-shadow: var(--shadow);
+ }
+
+ #output-box .section-header {
+     background: var(--teal);
+ }
+
+ #output {
+     font-size: 0.8rem;
+     line-height: 1.5;
+     padding: 14px;
+     min-height: 54px;
+     word-break: break-all;
+     color: var(--ink);
+     font-family: 'Space Mono', monospace;
+ }
+
+ #output::before {
+     content: '▶ ';
+     color: var(--accent);
+     font-weight: 700;
+ }
+
+ /* ─── Responsive ─── */
+ @media (max-width: 680px) {
+     .layout {
+         grid-template-columns: 1fr;
+     }
+ }

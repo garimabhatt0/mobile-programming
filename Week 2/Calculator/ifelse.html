@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator Using If Else</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h2>Simple Calculator</h2>
+
+        <input type="number" id="num1" placeholder="Enter First Number">
+
+        <input type="number" id="num2" placeholder="Enter Second Number">
+
+        <select id="operator">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiply (*)</option>
+            <option value="/">Divide (/)</option>
+        </select>
+
+        <br>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <h3 id="result">Result: </h3>
+
+    </div>
+
+    <script>
+
+        function calculate() {
+
+            let n1 = parseFloat(document.getElementById("num1").value);
+            let n2 = parseFloat(document.getElementById("num2").value);
+            let op = document.getElementById("operator").value;
+
+            let result;
+
+            if (op == "+") {
+                result = n1 + n2;
+            }
+            else if (op == "-") {
+                result = n1 - n2;
+            }
+            else if (op == "*") {
+                result = n1 * n2;
+            }
+            else if (op == "/") {
+                result = n1 / n2;
+            }
+            else {
+                result = "Invalid Operator";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Result: " + result;
+        }
+
+    </script>
+
+</body>
+</html>

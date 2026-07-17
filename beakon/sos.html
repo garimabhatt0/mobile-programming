@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beakon — SOS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <p class="page-header" style="color: #f09595">
+        <i class="ti ti-alert-triangle"></i> Emergency SOS
+      </p>
+
+      <!-- SOS BUTTON -->
+      <div class="sos-btn" id="sosBtn" onclick="activateSOS()">
+        🆘 SOS
+        <span>Hold to activate</span>
+      </div>
+
+      <p
+        style="
+          text-align: center;
+          font-size: 12px;
+          color: var(--text-muted);
+          margin-bottom: 24px;
+        "
+      >
+        Works offline via BLE relay · sends your GPS location
+      </p>
+
+      <!-- SAFETY ALERTS -->
+      <p class="section-title">Safety Alerts</p>
+
+      <div class="alert-box">
+        ⚠️ Landslide risk on Jomsom–Kagbeni trail. Avoid until further notice.
+      </div>
+
+      <div class="alert-box">
+        🌧 Pre-monsoon rains expected in Terai region. Pack rain gear.
+      </div>
+
+      <div class="alert-box">
+        🏔 High altitude warning above 4,500m. Acclimatize properly.
+      </div>
+
+      <!-- EMERGENCY CONTACTS -->
+      <p class="section-title" style="margin-top: 16px">Emergency Contacts</p>
+
+      <button class="emergency-btn">
+        📞 <span>Nepal Police · <strong>100</strong></span>
+      </button>
+
+      <button class="emergency-btn">
+        🏥 <span>Tourist Helpline · <strong>1144</strong></span>
+      </button>
+
+      <button class="emergency-btn">
+        🚁 <span>Mountain Rescue · <strong>+977-1-4488877</strong></span>
+      </button>
+
+      <button class="emergency-btn">
+        🔴 <span>Ambulance · <strong>102</strong></span>
+      </button>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item">
+        <i class="ti ti-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="explore.html" class="nav-item">
+        <i class="ti ti-map-pin"></i>
+        <span>Explore</span>
+      </a>
+      <a href="nearby.html" class="nav-item">
+        <i class="ti ti-current-location"></i>
+        <span>Nearby</span>
+      </a>
+      <a href="journey.html" class="nav-item">
+        <i class="ti ti-route"></i>
+        <span>Journey</span>
+      </a>
+      <a href="guides.html" class="nav-item">
+        <i class="ti ti-users"></i>
+        <span>Guides</span>
+      </a>
+      <a href="sos.html" class="nav-item active">
+        <i class="ti ti-sos"></i>
+        <span>SOS</span>
+      </a>
+    </nav>
+
+    <script>
+      function activateSOS() {
+        const btn = document.getElementById("sosBtn");
+        btn.style.background = "rgba(163,45,45,0.4)";
+        btn.style.borderColor = "#F09595";
+        btn.innerHTML = "🆘 ACTIVATED<span>Sending location...</span>";
+        setTimeout(() => {
+          alert(
+            "SOS Activated! Your location has been shared with emergency contacts.",
+          );
+          btn.style.background = "rgba(163,45,45,0.15)";
+          btn.innerHTML = "🆘 SOS<span>Hold to activate</span>";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

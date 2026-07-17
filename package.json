@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.158",
+    "expo": "^56.0.12",
+    "react-dom": "^19.2.7",
+    "react-native-web": "^0.21.2"
+  }
+}

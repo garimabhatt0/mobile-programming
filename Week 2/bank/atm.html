@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Bank System</title>
+  <link rel="stylesheet" href="atm.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Simple Bank System</h1>
+
+    <div class="balance-box">
+      <p>Current Balance</p>
+      <h2>Rs. <span id="balance">10000</span></h2>
+    </div>
+
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <div class="button-group">
+      <button class="withdraw" onclick="handleTransaction('withdraw')">
+        Withdraw
+      </button>
+
+      <button class="deposit" onclick="handleTransaction('deposit')">
+        Deposit
+      </button>
+    </div>
+
+    <div id="message"></div>
+
+    <p class="info">Only multiples of 100 allowed</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beakon — Explore</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <p class="page-header"><i class="ti ti-map-pin"></i> Explore Nepal</p>
+
+      <!-- SEARCH -->
+      <div class="search-bar">
+        <i
+          class="ti ti-search"
+          style="color: var(--text-muted); font-size: 18px"
+        ></i>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search destinations..."
+          oninput="filterDestinations()"
+        />
+      </div>
+
+      <!-- MAP -->
+      <div class="map-box">
+        <div class="map-pin" style="top: 35%; left: 40%"></div>
+        <div class="map-pin" style="top: 55%; left: 62%"></div>
+        <div class="map-pin" style="top: 45%; left: 25%"></div>
+        <div class="map-pin" style="top: 30%; left: 55%"></div>
+        <span>🗺 Interactive Map — Nepal</span>
+      </div>
+
+      <!-- DESTINATIONS LIST -->
+      <p class="section-title">All Destinations</p>
+      <div id="destinationList"></div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item">
+        <i class="ti ti-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="explore.html" class="nav-item active">
+        <i class="ti ti-map-pin"></i>
+        <span>Explore</span>
+      </a>
+      <a href="nearby.html" class="nav-item">
+        <i class="ti ti-current-location"></i>
+        <span>Nearby</span>
+      </a>
+      <a href="journey.html" class="nav-item">
+        <i class="ti ti-route"></i>
+        <span>Journey</span>
+      </a>
+      <a href="guides.html" class="nav-item">
+        <i class="ti ti-users"></i>
+        <span>Guides</span>
+      </a>
+      <a href="sos.html" class="nav-item">
+        <i class="ti ti-sos"></i>
+        <span>SOS</span>
+      </a>
+    </nav>
+
+    <script src="js/firebase.js" type="module"></script>
+    <script src="js/explore.js"></script>
+  </body>
+</html>
